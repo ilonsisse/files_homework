@@ -1,7 +1,10 @@
 class Cookbook:
 
     def read_cookbook(self):
-        """ This function reads file line by line and returns file data as cook_book dictionary"""
+        """ This function reads file in format like recipes.txt line by line and returns file data as cook_book
+        dictionary.
+
+        """
         with open('recipes.txt', 'r') as recipes:
             cook_book = {}
 
@@ -28,6 +31,13 @@ class Cookbook:
                 recipes.readline()
 
         return cook_book
+
+    def get_shop_list_by_dishes(self, dishes, person_count):
+        """Thшы function takes a list of dishes from cook_book and the number of people and returns a dictionary with
+        the name of the ingredients and their quantities for the dish.
+
+        """
+        pass
 
 
 my_cookbook = Cookbook()
