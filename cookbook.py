@@ -1,4 +1,8 @@
 class Cookbook:
+    """The Cookbook class represents a tool for working with culinary recipes.
+    Methods: read_cookbook, get_shop_list_by_dishes.
+
+    """
 
     def read_cookbook(self):
         """ This function reads file in format like recipes.txt line by line and returns file data as cook_book
