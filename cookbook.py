@@ -3,6 +3,7 @@ class Cookbook:
     def read_cookbook(self):
         """ This function reads file in format like recipes.txt line by line and returns file data as cook_book
         dictionary.
+        1st task.
 
         """
         with open('recipes.txt', 'r') as recipes:
@@ -33,12 +34,22 @@ class Cookbook:
         return cook_book
 
     def get_shop_list_by_dishes(self, dishes, person_count):
-        """Thшы function takes a list of dishes from cook_book and the number of people and returns a dictionary with
+        """This function takes a list of dishes from cook_book and the number of people and returns a dictionary with
         the name of the ingredients and their quantities for the dish.
+        2nd task.
 
         """
-        pass
+        shop_list = {}
+        cook_book = self.read_cookbook()
+        for dish in dishes:
+            if dish in cook_book:
+                for ingredient in cook_book[dish]:
+                    ingredient['quantity'] *= person_count
+                    shop_list.setdefault(ingredient['ingredient_name'], ingredient)
+
+        return shop_list
 
 
 my_cookbook = Cookbook()
 print(my_cookbook.read_cookbook())
+print(my_cookbook.get_shop_list_by_dishes(['Омлет', 'Фахитос'], 3))
