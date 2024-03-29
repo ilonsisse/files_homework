@@ -45,11 +45,20 @@ class Cookbook:
             if dish in cook_book:
                 for ingredient in cook_book[dish]:
                     ingredient['quantity'] *= person_count
-                    shop_list.setdefault(ingredient['ingredient_name'], ingredient)
+                    if ingredient['ingredient_name'] in shop_list:
+                        # Увеличивает количество ингредиента в списке покупок на количество ингредиента из текущего
+                        # блюда
+                        shop_list[ingredient['ingredient_name']]['quantity'] += ingredient['quantity']
+                    else:
+                        # Если ингредиент отсутствует в списке покупок, то добавляет его
+                        shop_list[ingredient['ingredient_name']] = {
+                            'quantity': ingredient['quantity'],
+                            'measure': ingredient['measure']
+                        }
 
         return shop_list
 
 
 my_cookbook = Cookbook()
 print(my_cookbook.read_cookbook())
-print(my_cookbook.get_shop_list_by_dishes(['Омлет', 'Фахитос'], 3))
+print(my_cookbook.get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
