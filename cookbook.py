@@ -21,3 +21,5 @@ class Cookbook:
             return cook_book
 
 
+my_cookbook = Cookbook()
+print(my_cookbook.read_cookbook())
