@@ -1,11 +1,11 @@
 class Cookbook:
-    """The Cookbook class represents a tool for working with culinary recipes.
+    """Represents a tool for working with culinary recipes.
     Methods: read_cookbook, get_shop_list_by_dishes.
 
     """
 
     def read_cookbook(self):
-        """ This function reads file in format like recipes.txt line by line and returns file data as cook_book
+        """ Reads file in format like recipes.txt line by line and returns file data as cook_book
         dictionary.
         1st task.
 
@@ -38,7 +38,7 @@ class Cookbook:
         return cook_book
 
     def get_shop_list_by_dishes(self, dishes, person_count):
-        """This function takes a list of dishes from cook_book and the number of people and returns a dictionary with
+        """Takes a list of dishes from cook_book and the number of people and returns a dictionary with
         the name of the ingredients and their quantities for the dish.
         2nd task.
 
@@ -66,3 +66,4 @@ class Cookbook:
 my_cookbook = Cookbook()
 print(my_cookbook.read_cookbook())
 print(my_cookbook.get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 2))
+print(my_cookbook.get_shop_list_by_dishes(['Омлет', 'Фахитос'], 2))
