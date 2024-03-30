@@ -24,7 +24,7 @@ class FileManager:
             with open(file_path, 'r') as file:
                 lines = file.readlines()
                 file_contents.append((filename, len(lines), lines))
-        file_contents.sort(key=lambda x: x[1])  # ключ сортировки - количество строк в файле
+        file_contents.sort(key=lambda x: x[1])  # Ключ сортировки - количество строк в файле
         return file_contents
 
     def write_to_result_file(self, file_contents):
@@ -35,7 +35,7 @@ class FileManager:
         with open('result.txt', 'w') as result_file:
             for filename, num_lines, lines in file_contents:
                 result_file.write(f'{filename}\n{num_lines}\n')
-                result_file.writelines(lines)  # Записываем список строк
+                result_file.writelines(lines)  # Записываем список из строк
                 result_file.write('\n')
 
 
