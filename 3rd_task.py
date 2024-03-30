@@ -1,6 +1,17 @@
 import os
 
 
-file_path_1 = os.path.join(os.getcwd(), '1.txt')
-file_path_2 = os.path.join(os.getcwd(), '2.txt')
-file_path_3 = os.path.join(os.getcwd(), '3.txt')
+class FileManager:
+
+    def __init__(self, directory, files):
+        self.directory = directory
+        self.files = files
+
+    def read_file(self, file_path):
+        with open('file_path', 'r') as file:
+            lines = file.readlines()
+            return os.path.basename(file_path), len(lines), lines
+
+
+
+
